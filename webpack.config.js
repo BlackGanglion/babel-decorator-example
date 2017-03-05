@@ -1,10 +1,14 @@
 var path = require('path');
 
 module.exports = {
-  entry: './input.js',
+  entry: {
+    redux: './src/redux',
+    mobx: './src/mobx',
+  },
   output: {
-    path: path.join(__dirname, '/'),
-    filename: 'output.js'
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].js',
+    publicPath: '/build/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
